@@ -89,6 +89,10 @@ class BlogManager {
     return this.blogs.find((blog) => blog.id === id);
   }
 
+  sortBlogs() {
+    this.blogs.sort((a, b) => b.updatedDate - a.updatedDate);
+  }
+
   // ค้นหาบล็อกตาม tag
   getBlogsByTag(tag) {
     if (!tag) return this.blogs;
